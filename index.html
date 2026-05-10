@@ -1,0 +1,130 @@
+import image5 from "./image-5.png";
+
+const navItems = [
+  {
+    label: "О НАС",
+    href: "#about",
+    className:
+      "inline-flex px-[59px] py-[18px] top-[99px] left-[calc(50.00%_-_844px)] bg-[#3355ed] rounded-[64px] items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "СТОИМОСТЬ УСЛУГ",
+    href: "#pricing",
+    className:
+      "inline-flex px-[59px] py-[18px] top-[99px] left-[calc(50.00%_+_204px)] bg-[#3d3d3d] rounded-[64px] items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "КОНТАКТЫ",
+    href: "#contacts",
+    className:
+      "inline-flex px-[59px] py-[18px] top-[99px] left-[calc(50.00%_+_590px)] bg-[#3d3d3d] rounded-[64px] items-center justify-center gap-2.5 absolute",
+  },
+] as const;
+
+const serviceCards = [
+  {
+    label: "ПЛАТЕЖИ",
+    className:
+      "flex w-[540px] h-[295px] p-2.5 top-[1152px] left-[100px] rounded-[33px] border-2 border-solid border-white items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "ВКЛАДЫ",
+    className:
+      "flex w-[540px] h-[295px] p-2.5 top-[1152px] left-[690px] rounded-[33px] border-2 border-solid border-white items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "ЦЕЛИ",
+    className:
+      "flex w-[540px] h-[295px] p-2.5 top-[1152px] left-[1280px] rounded-[33px] border-2 border-solid border-white items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "БЮДЖЕТ",
+    className:
+      "flex w-[540px] h-[295px] p-2.5 top-[1536px] left-[100px] rounded-[33px] border-2 border-solid border-white items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "КЭШБЕКИ",
+    className:
+      "flex w-[540px] h-[295px] p-2.5 top-[1536px] left-[690px] rounded-[33px] border-2 border-solid border-white items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "КРЕДИТЫ",
+    className:
+      "flex w-[540px] h-[295px] p-2.5 top-[1536px] left-[1280px] rounded-[33px] border-2 border-solid border-white items-center justify-center gap-2.5 absolute",
+  },
+] as const;
+
+const featureCards = [
+  {
+    label: "ПЕРЕВОДЫ",
+    className:
+      "flex w-[822px] h-[295px] p-2.5 top-[1920px] left-[100px] rounded-[33px] bg-[linear-gradient(270deg,rgba(51,85,237,1)_0%,rgba(51,188,237,1)_100%)] items-center justify-center gap-2.5 absolute",
+  },
+  {
+    label: "АНАЛИТИКА",
+    className:
+      "flex w-[822px] h-[295px] p-2.5 top-[1920px] left-[998px] rounded-[33px] bg-[linear-gradient(270deg,rgba(51,85,237,1)_0%,rgba(51,188,237,1)_100%)] items-center justify-center gap-2.5 absolute",
+  },
+] as const;
+
+export const Screen = (): JSX.Element => {
+  return (
+    <main className="bg-[#101010] w-full min-w-[1920px] min-h-[2434px] relative">
+      <header>
+        <nav aria-label="Основная навигация">
+          {navItems.map((item) => (
+            <a key={item.label} href={item.href} className={item.className}>
+              <span className="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-2xl text-white tracking-[0] leading-[normal]">
+                {item.label}
+              </span>
+            </a>
+          ))}
+        </nav>
+        <div className="absolute top-[106px] left-[594px] [font-family:'Inter-Bold',Helvetica] font-bold text-[43px] text-white tracking-[0] leading-[normal]">
+          ПУЛЬС БАНК
+        </div>
+      </header>
+      <section id="about" aria-labelledby="hero-title" className="relative">
+        <img
+          className="absolute top-[99px] left-[116px] w-[1687px] h-[881px] aspect-[1.91] object-cover"
+          alt="Интерфейс приложения Пульс Банк на смартфоне"
+          src={image5}
+        />
+        <div className="absolute top-[706px] left-48 [font-family:'Inter-Regular',Helvetica] font-normal text-[43px] text-white tracking-[0] leading-[normal]">
+          ПРИЛОЖЕНИЕ
+        </div>
+        <h1
+          id="hero-title"
+          className="absolute top-[796px] left-48 [font-family:'Inter-Bold',Helvetica] font-bold text-[102px] text-white tracking-[0] leading-[normal]"
+        >
+          ПУЛЬС БАНК
+        </h1>
+      </section>
+      <section aria-label="Разделы приложения">
+        {serviceCards.map((card) => (
+          <article
+            key={card.label}
+            className={card.className}
+            aria-label={card.label}
+          >
+            <div className="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-[43px] text-white tracking-[0] leading-[normal]">
+              {card.label}
+            </div>
+          </article>
+        ))}
+
+        {featureCards.map((card) => (
+          <article
+            key={card.label}
+            className={card.className}
+            aria-label={card.label}
+          >
+            <div className="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-[43px] text-white tracking-[0] leading-[normal]">
+              {card.label}
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
+};
